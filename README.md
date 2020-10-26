@@ -1,7 +1,7 @@
 # LiveChat-App
 
 ### [Live Site](https://livechat-app.netlify.com)
-![Chat Application](https://github.com/ChiarelliLuciano/covid-app/blob/master/src/images/covid.png)
+![Chat Application]()
 
 ## Introducción
 
