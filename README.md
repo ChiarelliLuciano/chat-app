@@ -1,4 +1,11 @@
-# chat-app
+# LiveChat-App
+
+### [Live Site](https://livechat-app.netlify.com)
+
+## Introducción
+
+Esta app permite el intercambio de mensajes de texto en tiempo real, notifica la entrada o salida de los usuarios y admite emojis.
+
 El back-end fue hosteado en Heroku y el front-end en Netlify.
-La app permite chatear en tiempo real, notifica la entrada y salida de los usuarios y admite emojis.
-Pruebala con amigos! ==> https://livechat-app.netlify.app/
+
+Pruebala con amigos!
