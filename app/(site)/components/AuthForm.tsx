@@ -1,7 +1,10 @@
 "use client";
 import { useState, useCallback } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { BsGithub, BsGoogle } from "react-icons/bs";
 import Input from "@/app/components/Input/Input";
+import Button from "@/app/components/Button";
+import SocialButton from "./SocialButton";
 
 type Variant = "LOGIN" | "REGISTER";
 
@@ -45,11 +48,17 @@ const AuthForm = () => {
   };
 
   return (
-    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-md">
       <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
-            <Input id="name" label="Name" register={register} errors={errors} />
+            <Input
+              id="name"
+              label="Name"
+              register={register}
+              errors={errors}
+              disabled={loading}
+            />
           )}
           <Input
             id="email"
@@ -57,18 +66,54 @@ const AuthForm = () => {
             type="email"
             register={register}
             errors={errors}
+            disabled={loading}
           />
           <Input
             id="password"
-            label="Password"
+            label="Contraseña"
             type="password"
             register={register}
             errors={errors}
+            disabled={loading}
           />
           <div>
-            <button>Submit</button>
+            <Button disabled={loading} fullWidth type="submit">
+              {variant === "LOGIN" ? "Iniciar Sesión" : "Registrarse"}
+            </Button>
           </div>
         </form>
+
+        <div className="mt-6">
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="bg-white px-2 text-gray-500">Ingresar con:</span>
+            </div>
+          </div>
+          <div className="mt-6 flex gap-2">
+            <SocialButton
+              icon={BsGithub}
+              onClick={() => socialAction("github")}
+            />
+            <SocialButton
+              icon={BsGoogle}
+              onClick={() => socialAction("google")}
+            />
+          </div>
+        </div>
+
+        <div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500">
+          <div>
+            {variant === "LOGIN"
+              ? "No tienes una cuenta?"
+              : "Ya tienes tu cuenta?"}
+          </div>
+          <div onClick={toggleVariant} className="underline cursor-pointer">
+            {variant === "LOGIN" ? "Crear cuenta" : "Iniciar sesión"}
+          </div>
+        </div>
       </div>
     </div>
   );
