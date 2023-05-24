@@ -6,6 +6,8 @@ import { BsGithub, BsGoogle } from "react-icons/bs";
 import Input from "@/app/components/Input/Input";
 import Button from "@/app/components/Button";
 import SocialButton from "./SocialButton";
+import { toast } from "react-hot-toast";
+import { signIn } from "next-auth/react";
 
 type Variant = "LOGIN" | "REGISTER";
 
@@ -36,16 +38,40 @@ const AuthForm = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setLoading(true);
     if (variant === "REGISTER") {
-      axios.post("/api/register", data);
+      axios
+        .post("/api/register", data)
+        .catch(() => toast.error("Algo salió mal, intente más tarde."))
+        .finally(() => setLoading(false));
     }
     if (variant === "LOGIN") {
-      // NextAuth SignIn
+      signIn("credentials", {
+        ...data,
+        redirect: false,
+      })
+        .then((callback) => {
+          if (callback?.error) {
+            toast.error("Credenciales Inválidas");
+          }
+          if (callback?.ok && !callback?.error) {
+            toast.success("Sesión iniciada!");
+          }
+        })
+        .finally(() => setLoading(false));
     }
   };
 
   const socialAction = (action: string) => {
     setLoading(true);
-    // NextAuth Github/Google SignIn
+    signIn(action, { redirect: false })
+      .then((callback) => {
+        if (callback?.error) {
+          toast.error("Credenciales Inválidas");
+        }
+        if (callback?.ok && !callback?.error) {
+          toast.success("Sesión iniciada!");
+        }
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
