@@ -3,7 +3,6 @@ import { useMemo } from "react";
 import { HiChat } from "react-icons/hi";
 import { HiArrowLeftOnRectangle, HiUsers } from "react-icons/hi2";
 import { signOut } from "next-auth/react";
-import { toast } from "react-hot-toast";
 import useConversation from "./useConversation";
 
 const useRoutes = () => {
@@ -27,10 +26,7 @@ const useRoutes = () => {
       {
         label: "Logout",
         href: "#",
-        onClick: () => {
-          toast.success("Sesión finalizada.");
-          setTimeout(() => signOut(), 2000);
-        },
+        onClick: () => signOut(),
         icon: HiArrowLeftOnRectangle,
       },
     ],
