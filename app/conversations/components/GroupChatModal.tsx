@@ -8,6 +8,7 @@ import { toast } from "react-hot-toast";
 import Modal from "@/app/components/Modal";
 import Input from "@/app/components/Input/Input";
 import Select from "@/app/components/Input/Select";
+import Button from "@/app/components/Button";
 
 interface GroupChatModalProps {
   isOpen?: boolean;
@@ -87,6 +88,14 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
               />
             </div>
           </div>
+        </div>
+        <div className="mt-6 flex items-center justify-end gap-x-6">
+          <Button disabled={loading} onClick={onClose} type="button" secondary>
+            Cancelar
+          </Button>
+          <Button disabled={loading} type="submit">
+            Crear
+          </Button>
         </div>
       </form>
     </Modal>
