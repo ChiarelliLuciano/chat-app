@@ -21,7 +21,7 @@ const LoadingModal = () => {
         <div className="fixed inset-0 z-10 overflow-t-auto">
           <div className="flex min-h-full items-center justify-center p-4 text-center">
             <Dialog.Panel>
-              <SyncLoader size={40} color="#0284c7" />
+              <SyncLoader size={40} color="#59C9A5" />
             </Dialog.Panel>
           </div>
         </div>
