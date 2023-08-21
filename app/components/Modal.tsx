@@ -95,7 +95,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                       hover:text-gray-500 
                       focus:outline-none 
                       focus:ring-2 
-                      focus:ring-indigo-500 
+                      focus:ring-sky-600 
                       focus:ring-offset-2
                     "
                     onClick={onClose}

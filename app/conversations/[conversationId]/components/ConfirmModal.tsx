@@ -51,8 +51,8 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
           </Dialog.Title>
           <div className="mt-2">
             <p className="text-sm text-gray-600">
-              Seguro que quieres eliminar esta conversación? Esta acción es
-              permanente y<span className="text-red-600 font-bold"> NO</span>{" "}
+              Seguro que quieres eliminar la conversación? Esta acción es
+              permanente,<span className="text-red-600 font-bold"> NO</span>{" "}
               podrás recuperarla.
             </p>
           </div>

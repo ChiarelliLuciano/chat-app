@@ -16,7 +16,7 @@ export default function Home() {
           Ingresar
         </h2>
       </div>
-      <AuthForm></AuthForm>
+      <AuthForm />
     </div>
   );
 }

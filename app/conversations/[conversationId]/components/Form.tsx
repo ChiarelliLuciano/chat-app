@@ -45,7 +45,7 @@ const Form = () => {
       >
         <HiPhoto
           size={30}
-          className="text-cyan-500 hover:text-cyan-600 cursor-pointer"
+          className="text-sky-600 hover:text-sky-700 cursor-pointer"
         />
       </CldUploadButton>
       <form
@@ -57,11 +57,11 @@ const Form = () => {
           register={register}
           errors={errors}
           required
-          placeholder="Escribe tu mensaje"
+          placeholder="Escribe un mensaje aquí"
         />
         <button
           type="submit"
-          className="rounded-full p-2 bg-cyan-500 cursor-pointer hover:bg-sky-600 transition"
+          className="rounded-full p-2 bg-sky-600 cursor-pointer hover:bg-sky-700 transition"
         >
           <HiPaperAirplane size={18} className="text-white" />
         </button>
