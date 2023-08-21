@@ -17,7 +17,7 @@ const Select: React.FC<SelectProps> = ({
   disabled,
 }) => {
   return (
-    <div className="z-[100]">
+    <div className="z-[100] mt-2">
       <label className="block text-sm font-medium leading-6 text-gray-900">
         {label}
       </label>
@@ -27,6 +27,7 @@ const Select: React.FC<SelectProps> = ({
           value={value}
           onChange={onChange}
           isMulti
+          placeholder="Seleccione integrantes..."
           options={options}
           menuPortalTarget={document.body}
           styles={{

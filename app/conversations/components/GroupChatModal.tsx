@@ -60,7 +60,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900">
-              Crear Grupo
+              Nuevo Grupo
             </h2>
             <p className="mt-1 text-sm leading-6 text-gray-600">
               Crea un chat con varias personas!
@@ -76,7 +76,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
               />
               <Select
                 disabled={loading}
-                label="Miembros"
+                label="Integrantes"
                 onChange={(value) =>
                   setValue("members", value, { shouldValidate: true })
                 }
