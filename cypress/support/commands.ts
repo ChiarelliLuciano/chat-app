@@ -35,3 +35,15 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add("login", (user, password) => {
+  cy.get("#email").type(user);
+  cy.get("#password").type(password);
+  cy.get('button[type="submit"]').click();
+});
+
+declare namespace Cypress {
+  interface Chainable {
+    login(email: string, password: string): Chainable<void>;
+  }
+}

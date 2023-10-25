@@ -23,6 +23,7 @@ const MobileItem: React.FC<MobileItemProps> = ({
 
   return (
     <Link
+      data-cy={href}
       href={href}
       onClick={handleClick}
       className={clsx(
